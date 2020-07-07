@@ -28,7 +28,7 @@ const SignUp = () => {
         event.preventDefault()
 
         axios
-        .post('https://agile-reef-24551.herokuapp.com/auth/local/register',{
+        .post('https://strp-backend.herokuapp.com/auth/local/register',{
             username: email,
             email,
             password,

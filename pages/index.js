@@ -13,10 +13,9 @@ const HomePage = ({ posts }) => {
             <title>CodeBoard Public Posts</title>
         </Head>
         <Flex justifyContent = "space-between" flexDirection = {{_: "column"}}>
-            {posts.length}
             {posts.map(post => (
                 <Box key = {post.id} width = {{_: "100%", md: "80%"}} variant = "post">
-                    <Link href = {`/posts/${post.id}`}><a style = {{textDecoration: "none", color:"black"}}>
+                    <Link as="/path/to" href = {`/posts/${post.id}`}><a style = {{textDecoration: "none", color:"black"}}>
                     <Card post = {post} /></a>
                     </Link>
                 </Box>
@@ -27,7 +26,7 @@ const HomePage = ({ posts }) => {
 }
 
 export async function getStaticProps(){
-    const res = await fetch('https://agile-reef-24551.herokuapp.com/posts');
+    const res = await fetch('https://strp-backend.herokuapp.com/posts');
     const posts = await res.json();
 
     return{

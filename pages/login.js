@@ -29,7 +29,7 @@ const LogIn = () => {
         event.preventDefault()
 
         axios
-        .post('https://agile-reef-24551.herokuapp.com/auth/local',{
+        .post('https://strp-backend.herokuapp.com/auth/local',{
             identifier: email,
             password,
         })

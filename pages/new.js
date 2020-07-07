@@ -33,7 +33,7 @@ const New = () => {
             return
         }
     
-        axios.post('https://agile-reef-24551.herokuapp.com/posts', {
+        axios.post('https://strp-backend.herokuapp.com/posts', {
             post_title: title,
             description: description,
           },

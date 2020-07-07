@@ -15,7 +15,7 @@ const Post = ({post}) => {
     
     const handleDelete = async () => {
 
-        axios.delete(`https://agile-reef-24551.herokuapp.com/posts/${post.id}`, {
+        axios.delete(`https://strp-backend.herokuapp.com/posts/${post.id}`, {
             headers:{
                 'Authorization': `Bearer ${user.jwt}`
             }
@@ -53,7 +53,7 @@ const ButtonStyled = styled.button`
 `
 
 export async function getStaticPaths(){
-    const res = await fetch('https://agile-reef-24551.herokuapp.com/posts');
+    const res = await fetch('https://strp-backend.herokuapp.com/posts');
     const posts = await res.json();
 
     const paths = posts.map((post) => ({
@@ -64,7 +64,7 @@ export async function getStaticPaths(){
 }
 
 export async function getStaticProps({ params }){
-    const res = await fetch(`https://agile-reef-24551.herokuapp.com/posts/${params.id}`);
+    const res = await fetch(`https://strp-backend.herokuapp.com/posts/${params.id}`);
     const post = await res.json();
 
     return { props: { post } }
