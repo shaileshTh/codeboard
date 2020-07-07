@@ -13,6 +13,7 @@ const HomePage = ({ posts }) => {
             <title>CodeBoard Public Posts</title>
         </Head>
         <Flex justifyContent = "space-between" flexDirection = {{_: "column"}}>
+            {posts.length}
             {posts.map(post => (
                 <Box key = {post.id} width = {{_: "100%", md: "80%"}} variant = "post">
                     <Link href = {`/posts/${post.id}`}><a style = {{textDecoration: "none", color:"black"}}>
